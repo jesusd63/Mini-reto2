@@ -6,8 +6,10 @@ Para nuestro mini-reto creamos una API de la tienda de ropa llamada Wardrobe Won
 La API cuenta con 5 de estos métods: 
 - `Post` crea un nuevo producto, no recibe parámetros y se requiere que se reciban los datos del **id del producto**, **nombre del producto**, **precio** y la **cantidad** de ese producto que se encuentra disponible en tienda.
 
+- `Get` obtiene la lista de todos los productos que existen en la tienda, de igual manera no recibe parámetros.
 - `Get` 
-
+- `Put`
+- `Delete` 
 
 ## Respuestas
 Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas que se darán a las peticiones del usuario, son las siguientes:
