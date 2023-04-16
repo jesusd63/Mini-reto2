@@ -1,13 +1,9 @@
 import GetButton from "./Components/GetButton";
+import React from "react";
 
 function App() {
-  // const [data, setData] = React.useState(null);
 
-  // React.useEffect(() => {
-  //   fetch("/api/hello")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
+  const [data, setData] = React.useState(null);
 
   return (
     <div>
