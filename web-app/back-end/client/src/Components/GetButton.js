@@ -1,21 +1,22 @@
-import classes from "./GetButtonModule.css";
-import getRequest from "../Services/UserService"
-import React from "react"
+import "./GetButtonModule.css";
+import React, {useState} from "react"
+import Modal from "./Modal"
 
 function GetButton(){
 
-    function request(){
-        const res = getRequest();
-        // console.log(res);
-        // res.then((data) => {
-        //     console.log(data)
-        //     for(const item of data.items){
-        //        console.log(item.name);
-        //     }
-        // })
+    const [ModalIsOpen, setModalIsOpen] = useState(false);
+
+    function deleteHandler(){
+        setModalIsOpen(true);
     }
 
-    return <button className= "btn" onClick={request}> GET </button>
+
+    return(
+    <div>
+        <button className= "btn" onClick={deleteHandler} > GET </button>
+        {ModalIsOpen ? <Modal /> : null}
+    </div>
+    );
 }
 
 export default GetButton;

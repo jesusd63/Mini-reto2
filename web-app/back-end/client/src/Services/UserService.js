@@ -1,16 +1,6 @@
 export default async function getRequest() {
     try{
-        //const response = await fetch('/item')
-        fetch('/item')
-        //console.log(response)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            for(const item of data.items){
-                console.log(item.name);
-            }
-            return data.items;
-        })
+        return fetch('/item')
     }catch(error) {
         return [];
     }
