@@ -4,7 +4,7 @@ Este repositorio de Github contiene la la explicación de uso y funcionalidad de
 Se realizó una API de la tienda de ropa llamada Wardrobe Wonderland. :shirt:
 
 ### Métodos HTTPS
-La API cuenta con 5 de estos métods: 
+La API cuenta con 5 de estos métodos: 
 - `Post` crea un nuevo producto, no recibe parámetros y para el request body son necesarios los datos del ***nombre del producto***, ***precio*** y la ***cantidad*** de ese producto que se encuentra disponible en tienda. Como Respuestas tiene la *201, 400 y 409.*
 
 - `Get` obtiene la lista de todos los productos que existen en la tienda, de igual manera no recibe parámetros. Y como respuestas tiene la *200*.
@@ -34,5 +34,6 @@ Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas qu
 - Esta API solo será utilizada por el personal de la tienda de ropa.
 
 Nuestra API responde a preguntas como:
+
 -¿Cómo utilizar una página de ecommerce?
 Nuestra página es de uso simple, acorde a los 5 métodos previamente descritos se podrán ingresar nuevos productos, modificar su precio, existencia y cantidad, y también eliminar productos de la lista de inventario.
