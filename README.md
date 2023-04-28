@@ -5,12 +5,15 @@ Se realizó una API de la tienda de ropa llamada Wardrobe Wonderland. :shirt:
 
 ### Métodos HTTPS
 La API cuenta con 5 de estos métods: 
-- `Post` crea un nuevo producto, no recibe parámetros y para el request body son nevcesarios los datos del ***id del producto***, ***nombre del producto***, ***precio*** y la ***cantidad*** de ese producto que se encuentra disponible en tienda. Como Respuestas tiene la *201, 400 y 409.*
+- `Post` crea un nuevo producto, no recibe parámetros y para el request body son necesarios los datos del ***nombre del producto***, ***precio*** y la ***cantidad*** de ese producto que se encuentra disponible en tienda. Como Respuestas tiene la *201, 400 y 409.*
 
-- `Get` obtiene la lista de todos los productos que existen en la tienda, de igual manera no recibe parámetros.
-- `Get` 
-- `Put`
-- `Delete` 
+- `Get` obtiene la lista de todos los productos que existen en la tienda, de igual manera no recibe parámetros. Y como respuestas tiene la *200*.
+
+- `Get` obtiene productos por ***categoría*** (pantalones, blusas, zapatos), como parámetros tiene que recibir en que categoría se encuentra el producto. Como respuestas tiene la *200, y 400.*
+
+- `Put` actualizará la información de un producto por id (si se encuentra disponible, inventario y precio), como parámetro deberá recibir el id del producto. Para el request body son necesarios el ***id, nombre del producto, precio, y la cantidad disponible.*** Como respuestas tiene la *200, 400 y 404.* 
+
+- `Delete` eliminará un productp por id, por lo que como parámetro recibe el id. De respuestas tiene la *200 y 404.* 
 
 ### Respuestas
 Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas que se darán a las peticiones del usuario, son las siguientes:
