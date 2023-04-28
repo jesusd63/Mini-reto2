@@ -32,3 +32,7 @@ Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas qu
 ### Uso de la API
 - La API la usará la tienda de ropa para la creación de nuevos productos, muestra del inventario, actualización y el borrado de productos.
 - Esta API solo será utilizada por el personal de la tienda de ropa.
+
+Nuestra API responde a preguntas como:
+-¿Cómo utilizar una página de ecommerce?
+Nuestra página es de uso simple, acorde a los 5 métodos previamente descritos se podrán ingresar nuevos productos, modificar su precio, existencia y cantidad, y también eliminar productos de la lista de inventario.
