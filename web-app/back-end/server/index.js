@@ -6,41 +6,94 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+const path = require('path');
+
 app.use(bodyParser.json());
 
-app.get("/api/hello", (req, res)=>{
-    res.json({message: "Hello from server siiiiiiiiiiiiiiiiide!" });
-});
-
-app.get("/client", (req,res) => {
-    fs.readFile(__dirname + "/clients.json", "utf-8", (err, data) => {
-        console.log(data);
-        res.end(data);
-    });
-});
-
-app.get("/item", (req,res) => {
-    fs.readFile(__dirname + "/items.json", "utf-8", (err, data) => {
-        console.log(data);
-        res.end(data);
-    });
-});
-
-app.post("/client", (req,res) =>{
-    console.log("El cuerpo y vista de la petición", req.body);
-    res.status(200).end()
-});
-
-app.put("/client", (req, res) => {
-    console.log("Client put");
-    res.status(200).end()
+const mysql = require('mysql')
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'API',
+  password: '123456',
+  database: 'wardrobe'
 })
 
-app.delete("/client", (req, res) => {
-    console.log("Client delete");
-    res.status(201).end()
+db.connect()
+
+db.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
+  if (err) throw err
+
+  console.log('The solution is: ', rows[0].solution)
 })
 
-app.listen(PORT, ()=>{
+
+app.get("/productos", (req, res) => {
+    const q = "SELECT * FROM PRODUCTOS";
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  });
+
+  app.get("/productos/:category", (req, res) => {
+    const q = "SELECT * FROM productos WHERE category = ?";
+    db.query(q, (err, data) => {
+      if (err) {
+        console.log(err);
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  });
+  
+  app.post("/producto", (req, res) => {
+    console.log()
+    const q = "INSERT INTO productos(title, quantity, price, available, category, img) VALUES (?)";
+  
+    const values = [
+      req.body.title,
+      req.body.quantity,
+      req.body.price,
+      req.body.available,
+      req.body.category,
+      req.body.img
+    ];
+  
+    db.query(q, [values], (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+  });
+  
+  app.delete("/producto/:id", (req, res) => {
+    const productID = req.params.id;
+    const q = " DELETE FROM productos WHERE id = ? ";
+  
+    db.query(q, [productID], (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+  });
+  
+  app.put("/producto/:id", (req, res) => {
+    const productID = req.params.id;
+    const q = "UPDATE productos SET `quantity`= ?, `price`= ?, `available`= ? WHERE id = ?";
+  
+    const values = [
+      req.body.quantity,
+      req.body.price,
+      req.body.available,
+    ];
+  
+    db.query(q, [...values,productID], (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+  });
+
+  app.listen(PORT, ()=>{
     console.log(`Server listening on ${PORT}`);
 });

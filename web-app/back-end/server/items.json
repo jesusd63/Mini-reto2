@@ -1,13 +1,15 @@
 {  
-    "client1": {
-        "id": 1,  
-        "name":       "shirt",   
-        "price":      30
-    },
-
-    "client2": {  
-        "id": 2,  
-        "name":       "pants",
-        "price":      50
-    }
+    "items": [
+        {
+            "id": 1,  
+            "name":       "shirt",   
+            "price":      30
+        },
+        
+        {  
+            "id": 2,  
+            "name":       "pants",
+            "price":      50
+        }
+    ]
 }  

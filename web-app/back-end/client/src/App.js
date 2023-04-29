@@ -1,19 +1,21 @@
-import GetButton from "./Components/GetButton";
+import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Home from "./Pages/Home"
+import Put from "./Pages/Put"
+import Add from "./Pages/Add"
 
 function App() {
-  // const [data, setData] = React.useState(null);
-
-  // React.useEffect(() => {
-  //   fetch("/api/hello")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
 
   return (
-    <div>
-      <h1>BUTTONS</h1>
-      <GetButton />
+    <BrowserRouter> 
+      <div className="App">
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/put/:id" element={<Put />}/>
+        <Route path="/add" element={<Add />}/>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
