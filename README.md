@@ -1,7 +1,7 @@
 # Mini-Reto2
 
 Este repositorio de Github contiene la la explicación de uso y funcionalidad de nuestra API para nuestro mini-reto. 
-Se realizó una API de la tienda de ropa llamada Wardrobe Wonderland. :shirt:
+Se realizó una API de la tienda de ropa llamada **Wardrobe Wonderland.** :shirt: :jeans: :athletic_shoe:
 
 ### Métodos HTTPS
 La API cuenta con 5 de estos métodos: 
@@ -31,9 +31,21 @@ Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas qu
 
 ### Uso de la API
 - La API la usará la tienda de ropa para la creación de nuevos productos, muestra del inventario, actualización y el borrado de productos.
-- Esta API solo será utilizada por el personal de la tienda de ropa.
+- Esta API solo será utilizada por el personal de la tienda de ropa. Esto debido a las opciones de edición y borrado de productos.
 
 Nuestra API responde a preguntas como:
 
--¿Cómo utilizar una página de ecommerce?
-Nuestra página es de uso simple, acorde a los 5 métodos previamente descritos se podrán ingresar nuevos productos, modificar su precio, existencia y cantidad, y también eliminar productos de la lista de inventario.
+- ¿Qué productos hay en la tienda?
+Al entrar a la página se prodrán ver el tipo de productos que hay en la tienda.
+
+- ¿Está disponible el producto?
+Se utilizan 0´s y 1´s para que el personal sepa si el producto se encuentra disponible. Esta característica también se puede modificar desde el botón de Update.
+
+- ¿Cuántos hay disponibles?
+Los datos de disponibilidad se pueden consultar en la base de datos, de igual manera esta característica se puede editar desde el botón de Update.
+
+- ¿Cuál es el precio de un producto?
+Debajo de cada imagen y descripción del producto aparecerá su precio, el cual se puede editar.
+
+
+Consulta nuestro [Diagrama de Componentes](https://lucid.app/lucidchart/5ee58a98-6c54-47e4-9b57-9c509a1cd041/edit?viewport_loc=-1857%2C-1003%2C2434%2C1143%2C0_0&invitationId=inv_5baf495c-f10a-45c2-976e-8f9716e6e287)
