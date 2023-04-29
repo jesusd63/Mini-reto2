@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FormProvider, useForm, useWatch } from 'react-hook-form'
+import {useForm} from 'react-hook-form'
+import { ErrorMessage } from "@hookform/error-message";
 
 import "./Put.css"
 
@@ -16,7 +17,7 @@ function Put(){
       const productID = location.pathname.split("/")[2];
 
 
-      const { register, handleSubmit } = useForm();
+      const { register, formState: {errors} ,handleSubmit } = useForm();
       const onSubmit = async data => {
         const producto = {
           quantity: data.quantity,
@@ -41,20 +42,35 @@ function Put(){
                 type="number"
                 placeholder="Quantity"
                 name="quantity"
-                {...register("quantity", {required: true})}
+                {...register("quantity", {required: "Quantity is required"})}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="quantity"
+              render={({ message }) => <p>{message}</p>}
             />
             <input
                 type="number"
                 placeholder="Price"
                 name="price"
-                {...register("price", {required: true})}
+                {...register("price", {required: "A price is required"})}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="price"
+              render={({ message }) => <p>{message}</p>}
             />
             <input
                 type="number"
                 placeholder="Available (0|1)?"
                 name="available"
 
-                {...register("available", {required: true, min:0, max:1})}
+                {...register("available", {required: "Input can only be 1 or 0", min:0, max:1})}
+            />
+            <ErrorMessage
+              errors={errors}
+              name="available"
+              render={({ message }) => <p>{message}</p>}
             />
             <input type="submit" />
             </form>
