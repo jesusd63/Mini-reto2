@@ -13,10 +13,10 @@ La API cuenta con 5 de estos métodos:
 
 - `Put` actualizará la información de un producto por id (si se encuentra disponible, inventario y precio), como parámetro deberá recibir el id del producto. Para el request body son necesarios el ***id, nombre del producto, precio, y la cantidad disponible.*** Como respuestas tiene la *200, 400 y 404.* 
 
-- `Delete` eliminará un productp por id, por lo que como parámetro recibe el id. De respuestas tiene la *200 y 404.* 
+- `Delete` eliminará un producto por id, por lo que como parámetro recibe el id. De respuestas tiene la *200 y 404.* 
 
 ### Respuestas
-Cada uno de nuestros métodos hhtps cuenta con diferentes tipos de respuestas que se darán a las peticiones del usuario, son las siguientes:
+Cada uno de nuestros métodos https cuenta con diferentes tipos de respuestas que se darán a las peticiones del usuario, son las siguientes:
 
 - Respuesta 200
   - OK, esta respuesta indica que la solicitud del usuario ha tenido éxito.
