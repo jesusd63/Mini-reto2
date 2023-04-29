@@ -48,4 +48,4 @@ Los datos de disponibilidad se pueden consultar en la base de datos, de igual ma
 Debajo de cada imagen y descripción del producto aparecerá su precio, el cual se puede editar.
 
 
-Consulta nuestro [Diagrama de Componentes](https://lucid.app/lucidchart/5ee58a98-6c54-47e4-9b57-9c509a1cd041/edit?viewport_loc=-1857%2C-1003%2C2434%2C1143%2C0_0&invitationId=inv_5baf495c-f10a-45c2-976e-8f9716e6e287)
+### Consulta nuestro [Diagrama de Componentes](https://lucid.app/lucidchart/5ee58a98-6c54-47e4-9b57-9c509a1cd041/edit?viewport_loc=-1857%2C-1003%2C2434%2C1143%2C0_0&invitationId=inv_5baf495c-f10a-45c2-976e-8f9716e6e287)
