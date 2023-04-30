@@ -1,5 +1,6 @@
 const express = require("express");
 const fs = require("fs");
+const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3001;
@@ -9,14 +10,6 @@ const app = express();
 const path = require('path');
 
 app.use(bodyParser.json());
-
-const mysql = require('mysql')
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'API',
-  password: '123456',
-  database: 'wardrobe'
-})
 
 db.connect()
 
@@ -28,7 +21,7 @@ db.query('SELECT 1 + 1 AS solution', (err, rows, fields) => {
 
 
 app.get("/productos", (req, res) => {
-    const q = "SELECT * FROM PRODUCTOS";
+    const q = "SELECT * FROM productos";
     db.query(q, (err, data) => {
       if (err) {
         console.log(err);
