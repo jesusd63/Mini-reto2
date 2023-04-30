@@ -102,7 +102,9 @@ function Add(){
             />
               <input type="submit" />
             </form>
-            <Link to="/">See all products</Link>
+            <div className="return">
+              <Link to="/">See all products</Link>
+            </div>
         </div>
     );
 }

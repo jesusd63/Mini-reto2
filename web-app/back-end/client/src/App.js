@@ -7,7 +7,7 @@ import Add from "./Pages/Add"
 function App() {
 
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <div className="App">
       <Routes>
         <Route exact path="/" element={<Home />}/>

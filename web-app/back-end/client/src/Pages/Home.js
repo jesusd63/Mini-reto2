@@ -28,32 +28,85 @@ function Home(){
         }
       };
 
+      const fetchTops = async () => {
+        try {
+            const cat = "tops" 
+          const response = await axios.get(`/productos/category/${cat}`);
+          setProducts(response.data);
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
+    };
+        const fetchBottoms = async () => {
+            const cat = "bottoms" 
+            try {
+            const response = await axios.get(`/productos/category/${cat}`);
+            setProducts(response.data);
+            console.log(response);
+            } catch (error) {
+            console.log(error);
+            }
+        };
+        const fetchShoes = async () => {
+            const cat = "shoes" 
+            try {
+            const response = await axios.get(`/productos/category/${cat}`);
+            setProducts(response.data);
+            console.log(response);
+            } catch (error) {
+            console.log(error);
+            }
+        };
+
+        const fetchAll = async () => {
+            try {
+            const response = await axios.get(`/productos`);
+            setProducts(response.data);
+            console.log(response);
+            } catch (error) {
+            console.log(error);
+            }
+        };
+
+
     return(
         <div>
             <h1 className="store_name">Wardrobe Wonderland</h1>
+            <div className="Add-btn">
+                <button>
+                    <Link to="/add" style={{ color: "inherit", textDecoration: "none" }}>
+                    Add new product
+                    </Link>
+                </button>
+            </div>
+            <div className="categories">
+                <button onClick={() => fetchTops()}>TOPS</button>
+                <button onClick={() => fetchBottoms()}>BOTTOMS </button>
+                <button onClick={() => fetchShoes()}>SHOES</button>
+                <button onClick={() => fetchAll()}>All</button>
+            </div>
             <div className="products">
                 {products.map((item) => (
                 <div key={item.id} className="product">
                     <img src={item.img} alt="" />
                     <h2>{item.title}</h2>
-                    <span>${item.price}</span>
-                    <button className="delete" onClick={() => handleDelete(item.id)}>Delete</button>
-                    <button className="update">
-                    <Link
-                        to={`/put/${item.id}`}
-                        style={{ color: "inherit", textDecoration: "none" }}
-                    >
-                        Update
-                    </Link>
-                    </button>
+                    <h4>Price: ${item.price}</h4>
+                    <h4>Quantity: {item.quantity} </h4>
+                    <div className="Product-buttons"> 
+                        <button className="delete" onClick={() => handleDelete(item.id)}>Delete</button>
+                        <button className="update">
+                        <Link
+                            to={`/put/${item.id}`}
+                            style={{ color: "inherit", textDecoration: "none" }}
+                        >
+                            Update
+                        </Link>
+                        </button>
+                    </div>
                 </div>
                 ))}
             </div>
-            <button className="addHome">
-                <Link to="/add" style={{ color: "inherit", textDecoration: "none" }}>
-                Add new book
-                </Link>
-            </button>
         </div>
     );
 }

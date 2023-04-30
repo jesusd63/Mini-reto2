@@ -34,7 +34,7 @@ function Put(){
       };
 
       return (
-        <div>
+        <div className="put-form">
             <div className="form">
             <h1>Update the Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -76,7 +76,9 @@ function Put(){
             </form>
             </div>
             {error && "Something went wrong!"}
-            <Link to="/">See all products</Link>
+            <div className="return">
+              <Link to="/">See all products</Link>
+            </div>
         </div>
       );
 }

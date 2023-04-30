@@ -38,9 +38,10 @@ app.get("/productos", (req, res) => {
     });
   });
 
-  app.get("/productos/:category", (req, res) => {
+  app.get("/productos/category/:cat", (req, res) => {
+    const cat = req.params.cat;
     const q = "SELECT * FROM productos WHERE category = ?";
-    db.query(q, (err, data) => {
+    db.query(q, [cat], (err, data) => {
       if (err) {
         console.log(err);
         return res.json(err);
