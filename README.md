@@ -42,7 +42,7 @@ Al entrar a la página se prodrán ver el tipo de productos que hay en la tienda
 Se utilizan 0´s y 1´s para que el personal sepa si el producto se encuentra disponible. Esta característica también se puede modificar desde el botón de Update.
 
 - ¿Cuántos hay disponibles?
-Los datos de disponibilidad se pueden consultar en la base de datos, de igual manera esta característica se puede editar desde el botón de Update.
+Los datos de disponibilidad se pueden consultar al entrar a la app, este dato se encuentra debajo del precio del producto; de igual manera esta característica se puede editar desde el botón de Update.
 
 - ¿Cuál es el precio de un producto?
 Debajo de cada imagen y descripción del producto aparecerá su precio, el cual se puede editar.
