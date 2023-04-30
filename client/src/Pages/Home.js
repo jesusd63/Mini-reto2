@@ -10,7 +10,7 @@ function Home(){
     useEffect(() => {
         const fetchAllProducts = async () => {
         try {
-            const res = await axios.get("/productos");
+            const res = await axios.get("https://wonderland-api-jesusd63.vercel.app/productos");
             setProducts(res.data);
         } catch (err) {
             console.log(err);
@@ -21,7 +21,7 @@ function Home(){
 
     const handleDelete = async (id) => {
         try {
-          await axios.delete(`/producto/${id}`);
+          await axios.delete(`https://wonderland-api-jesusd63.vercel.app/producto/${id}`);
           window.location.reload()
         } catch (err) {
           console.log(err);
@@ -31,7 +31,7 @@ function Home(){
       const fetchTops = async () => {
         try {
             const cat = "tops" 
-          const response = await axios.get(`/productos/category/${cat}`);
+          const response = await axios.get(`https://wonderland-api-jesusd63.vercel.app/productos/category/${cat}`);
           setProducts(response.data);
           console.log(response);
         } catch (error) {
@@ -41,7 +41,7 @@ function Home(){
         const fetchBottoms = async () => {
             const cat = "bottoms" 
             try {
-            const response = await axios.get(`/productos/category/${cat}`);
+            const response = await axios.get(`https://wonderland-api-jesusd63.vercel.app/productos/category/${cat}`);
             setProducts(response.data);
             console.log(response);
             } catch (error) {
@@ -51,7 +51,7 @@ function Home(){
         const fetchShoes = async () => {
             const cat = "shoes" 
             try {
-            const response = await axios.get(`/productos/category/${cat}`);
+            const response = await axios.get(`https://wonderland-api-jesusd63.vercel.app/productos/category/${cat}`);
             setProducts(response.data);
             console.log(response);
             } catch (error) {
@@ -61,7 +61,7 @@ function Home(){
 
         const fetchAll = async () => {
             try {
-            const response = await axios.get(`/productos`);
+            const response = await axios.get(`https://wonderland-api-jesusd63.vercel.app/productos`);
             setProducts(response.data);
             console.log(response);
             } catch (error) {

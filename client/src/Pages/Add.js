@@ -22,7 +22,7 @@ function Add(){
           img: data.img,
         }
         try {
-          await axios.post("/producto", producto);
+          await axios.post("https://wonderland-api-jesusd63.vercel.app/producto", producto);
           navigate("/");
         } catch (err) {
           console.log(err);

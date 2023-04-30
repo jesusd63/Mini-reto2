@@ -25,7 +25,7 @@ function Put(){
           available: data.available,
         }
         try {
-          await axios.put(`/producto/${productID}`, producto);
+          await axios.put(`https://wonderland-api-jesusd63.vercel.app/producto/${productID}`, producto);
           navigate("/");
         } catch (err) {
           console.log(err);
